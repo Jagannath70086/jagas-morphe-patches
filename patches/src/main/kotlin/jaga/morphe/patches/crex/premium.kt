@@ -6,32 +6,16 @@ import app.morphe.patcher.patch.ApkFileType
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
-import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
-import com.android.tools.smali.dexlib2.iface.reference.StringReference
+import app.morphe.patcher.string
 
 val SubscriptionExpiredFingerprint = Fingerprint(
     returnType = "Z",
     parameters = listOf(),
-    strings = listOf(
-        "yyyy-MM-dd",
-        "expiry_date",
-        "0000-00-00",
-    ),
-    custom = { method, _ ->
-        val implementation = method.implementation ?: return@Fingerprint false
-
-        val referencedStrings = implementation.instructions
-            .mapNotNull { instruction ->
-                (instruction as? ReferenceInstruction)
-                    ?.reference
-                    ?.takeIf { it is StringReference }
-                    ?.toString()
-            }
-
-        referencedStrings.count { it == "yyyy-MM-dd" } == 2 &&
-                referencedStrings.count { it == "0000-00-00" } == 3 &&
-                referencedStrings.count { it == "expiry_date" } == 1
-    }
+    filters = listOf(
+        string("yyyy-MM-dd"),
+        string("expiry_date"),
+        string("0000-00-00"),
+    )
 )
 
 @Suppress("unused")
