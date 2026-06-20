@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@cleyrop-org/semantic-release-backmerge": "^5.2.4",
+    "@cleyrop-org/semantic-release-backmerge": "^6.0.0",
     "@MorpheApp/changelog": "github:MorpheApp/changelog#bundle",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
