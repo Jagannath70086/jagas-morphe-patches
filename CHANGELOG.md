@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/Jagannath70086/jagas-morphe-patches/compare/v1.0.1...v1.0.2) (2026-06-20)
+
+### 🐛 Bug Fixes
+
+* a fix for crex ([4f8a7c8](https://github.com/Jagannath70086/jagas-morphe-patches/commit/4f8a7c8d6cd6d2394ca6880b146ad5a0dd68ec2b))
+
 ## [1.0.1](https://github.com/Jagannath70086/jagas-morphe-patches/compare/v1.0.0...v1.0.1) (2026-06-20)
 
 ### 🐛 Bug Fixes
